@@ -4,6 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import android.os.Bundle
+import android.view.GestureDetector
+import android.view.MotionEvent
 import android.view.View
 import android.widget.ImageView
 import android.widget.Toast
@@ -16,9 +18,17 @@ public final class MyAppGlideModule : AppGlideModule()
 
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val shape =
+                intArrayOf(R.drawable.circle, R.drawable.square, R.drawable.triangle, R.drawable.star)
+
+        val i: Int = (0..3).random()
+        imgNext.setImageResource(shape[i])
+
 
         //val img: ImageView = findViewById(R.id.imgTitle)
 
@@ -26,11 +36,9 @@ class MainActivity : AppCompatActivity() {
         GlideApp.with(this)
                 .load(R.drawable.cover)
                 .override(800*600)
-            .into(imgTitle)
+                .into(imgTitle)
 
          */
-
-
 
 
 
@@ -43,6 +51,11 @@ class MainActivity : AppCompatActivity() {
                 return true
             }
         })
-
+        imgNext.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(v: View?) {
+                imgNext.setImageResource(shape[i])
+                recreate()
+            }
+        })
     }
 }

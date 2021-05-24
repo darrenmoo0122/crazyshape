@@ -14,6 +14,7 @@ import com.bumptech.glide.module.AppGlideModule
 public final class MyAppGlideModule : AppGlideModule()
 
 
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,14 +34,14 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        Toast.makeText(baseContext,"作者：巫萬升 ",Toast.LENGTH_LONG).show()
+        Toast.makeText(baseContext, "作者：巫萬升 ", Toast.LENGTH_LONG).show()
 
-        imgNext.setOnLongClickListener(object: View.OnLongClickListener{
-                override fun onLongClick(p0:View?):Boolean{
-                    intent = Intent(this@MainActivity, GameActivity::class.java)
-                    startActivity(intent)
-                    return true
-                }
+        imgNext.setOnLongClickListener(object : View.OnLongClickListener {
+            override fun onLongClick(p0: View?): Boolean {
+                intent = Intent(this@MainActivity, GameActivity::class.java)
+                startActivity(intent)
+                return true
+            }
         })
 
     }

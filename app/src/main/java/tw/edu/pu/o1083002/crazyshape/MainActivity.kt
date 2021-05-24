@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         //val img: ImageView = findViewById(R.id.imgTitle)
+
         /*
         GlideApp.with(this)
                 .load(R.drawable.cover)
@@ -27,6 +28,7 @@ class MainActivity : AppCompatActivity() {
             .into(imgTitle)
 
          */
+
 
 
 
